@@ -1,0 +1,17 @@
+Name: ucenter.rpc
+ListenOn: 127.0.0.1:8081
+Etcd:
+  Hosts:
+  - 127.0.0.1:23790
+  Key: ucenter.rpc
+
+# MySQL / Redis (for business data & caching)
+Mysql:
+  DataSource: root:root@tcp(127.0.0.1:18090)/zero_mall?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+StoreRedis:
+  - Host: 127.0.0.1:6379
+    Type: node
+    Weight: 100
+Captcha:
+Vid: 63feclc3507890ee2e7f9dd1
+Key: ca8f1bdclee5438b830aac9beef314e9

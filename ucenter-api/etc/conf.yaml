@@ -1,0 +1,16 @@
+Name: ucenterapi-api
+Host: 0.0.0.0
+Port: 8888
+UCenterRpc:
+  Etcd:
+    Hosts:
+      - 127.0.0.1:23790
+    Key: ucenter.rpc
+
+# MySQL / Redis (for business data & caching)
+Mysql:
+  DataSource: root:root@tcp(127.0.0.1:18090)/zero_mall?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+Redis:
+  - Host: 127.0.0.1:6379
+    Pass:
+    Db: 0

@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package register;
+
+option go_package = "./register";
+
+message RegisterRequest {
+  string username = 1;
+  string password = 2;
+  CaptchaRequest captcha = 3;
+  string phone = 4;
+  string promotion = 5;
+  string code = 6;
+  string country = 7;
+  string superPartner = 8;
+  string ip = 9;
+}
+
+message CaptchaRequest {
+  string server = 1;
+  string token = 2;
+}
+
+message RegisterResponse {}
+
+message NoResponse {}
+
+message CodeRequest {
+  string phone = 1;
+  string country = 2;
+}
+
+service RegisterService {
+  rpc RegisterByPhone(RegisterRequest) returns (RegisterResponse);
+  rpc SendCode(CodeRequest) returns (NoResponse);
+}
